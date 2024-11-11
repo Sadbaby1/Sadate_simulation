@@ -42,7 +42,7 @@ WT_by_day = [] # average waite time by day
 # -----> resources and other simulation constant
 waiter = 1      # worker that welcome the customers and register them
 # random arrival_rate : Average between 30 to 45 min
-num_mechanics = 3       # list available mechanics i n the repair shop
+num_mechanics = 3      # list available mechanics i n the repair shop
 SIM_TIME = (8 * 60)   # 8 hours per day
 
 class Shop:  # represent the car repair shop
@@ -202,13 +202,14 @@ days = list(range(1, 22))
 plt.figure(figsize=(10, 5))
 plt.plot(days, CQ_by_day, label='Queue Length at Registration', color='blue')
 plt.plot(days, MQ_by_day, label='Mechanics Queue Length', color='orange')
-plt.xlabel('Days')
-plt.ylabel('Number of Customers')
-plt.title('Queue Length at Registration and Mechanics Queue by Day')
-plt.xticks(days)  # Set x-axis to show only whole days from 1 to 20
+plt.xlabel('Days', fontsize=14)  # Increase font size for x-axis label
+plt.ylabel('Number of Customers', fontsize=14)  # Increase font size for y-axis label
+plt.title('Queue Length at Registration and Mechanics request by Day', fontsize=16)  # Increase font size for title
+plt.xticks(days, fontsize=12)  # Increase font size for x-axis ticks
+plt.yticks(fontsize=12)  # Increase font size for y-axis ticks
 plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))  # Ensure integer ticks on x-axis
 plt.gca().yaxis.set_major_locator(MaxNLocator(integer=True))  # Ensure integer ticks on y-axis
-plt.legend()
+plt.legend(fontsize=12)  # Increase font size for legend
 plt.grid()
 plt.show()
 
@@ -217,13 +218,12 @@ plt.figure(figsize=(10, 5))
 plt.plot(days, LR_by_day, label='Customers Lost at Registration', color='red')
 plt.plot(days, LMReq_by_day, label='Customers Lost at Mechanics', color='purple')
 plt.plot(days, CS_by_day, label='Customers Served', color='green')
-plt.xlabel('Days')
-plt.ylabel('Number of Customers')
-plt.title('Customer Loss and Service Counts by Day')
-plt.xticks(days)  # Set x-axis to show only whole days from 1 to 20
-plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))  # Ensure integer ticks on x-axis
-plt.gca().yaxis.set_major_locator(MaxNLocator(integer=True))  # Ensure integer ticks on y-axis
-plt.legend()
+plt.xlabel('Days', fontsize=14)  # Increase font size for x-axis label
+plt.ylabel('Number of Customers', fontsize=14)  # Increase font size for y-axis label
+plt.title('Customer Loss and Service Counts by Day', fontsize=16)  # Increase font size for title
+plt.xticks(days, fontsize=12)  # Increase font size for x-axis ticks
+plt.yticks(fontsize=12)  # Increase font size for y-axis ticks
+plt.legend(fontsize=12)  # Increase font size for legend
 plt.grid()
 plt.show()
 
@@ -231,13 +231,11 @@ plt.show()
 plt.figure(figsize=(10, 5))
 plt.plot(days, WT_by_day, label='Average Wait Time per Day', color='blue')
 plt.axhline(y=service_time, color='orange', linestyle='--', label='Target Wait Time (50 mins)')
-plt.xlabel('Days')
-plt.ylabel('Wait Time (minutes)')
-plt.title('Average Wait Time per Day with Target Wait Time')
-plt.xticks(days)  # Set x-axis to show only whole days from 1 to 20
-plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))  # Ensure integer ticks on x-axis
-plt.gca().yaxis.set_major_locator(MaxNLocator(integer=True))  # Ensure integer ticks on y-axis
-plt.legend()
+plt.xlabel('Days', fontsize=14)  # Increase font size for x-axis label
+plt.ylabel('Wait Time (minutes)', fontsize=14)  # Increase font size for y-axis label
+plt.title('Average Wait Time per Day with Target Wait Time', fontsize=16)  # Increase font size for title
+plt.xticks(days, fontsize=12)  # Increase font size for x-axis ticks
+plt.yticks(fontsize=12)  # Increase font size for y-axis ticks
+plt.legend(fontsize=12)  # Increase font size for legend
 plt.grid()
 plt.show()
-
